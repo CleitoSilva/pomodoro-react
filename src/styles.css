@@ -1,0 +1,122 @@
+:root {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #22c55e;
+  --accent-2: #3b82f6;
+  --ring-bg: #1e293b;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.2), transparent 70%),
+              radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.2), transparent 70%),
+              var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pomodoro {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+.mode {
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-ring {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: conic-gradient(var(--accent) 0deg, var(--ring-bg) 0deg);
+  transition: background 0.3s linear;
+}
+
+.timer {
+  background: var(--bg);
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  font-size: 15px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:nth-child(2) {
+  background: var(--accent-2);
+}
+
+button:nth-child(3) {
+  background: #475569;
+}
+.cycles {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--muted);
+}
+.tomato {
+  width: 100px;
+  height: 100px;
+  animation: bounce 2s infinite ease-in-out;
+  display: block;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.4));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+body.focus-mode {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  transition: background 1s ease;
+}
+
+body.break-mode {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  transition: background 1s ease;
+}
